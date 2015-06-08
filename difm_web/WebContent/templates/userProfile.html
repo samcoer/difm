@@ -1,0 +1,41 @@
+<div class="userprofile">
+	<h2>User Profile</h2>
+
+    <label for="firstName">First Name</label>
+	<input ng-model="user.firstName" class="formfield" type="text" name="firstName"/>
+    
+    <label path="lastName">Last Name</label>
+	<input ng-model="user.lastName" class="formfield" type="text" name="lastName"/>
+
+    <label path="userName">Username/Email</label>
+	<input ng-model="user.userName" class="formfield" type="email" name="userName"/>
+
+    <label path="password">Password</label>
+	<input ng-model="user.password" class="formfield" type="password" name="password"/>
+
+    <label path="phoneNumber">Mobile</label>
+	<input ng-model="user.phoneNumber" class="formfield" type="number" name="phoneNumber"/>
+
+    <input type="submit" value="Register"/>
+ 
+<!-- <h3>Users</h3>
+<c:if  test="${!empty userList}">
+<table class="data">
+
+    <th>Name</th>
+    <th>Email</th>
+    <th>Mobile</th>
+    <th>&nbsp;</th>
+
+<c:forEach items="${userList}" var="userProfile">
+    <tr>
+        <td>${userProfile.firstName} ${userProfile.lastName} </td>
+        <td>${userProfile.userName}</td>
+        <td>${userProfile.phoneNumber}</td>
+        <td><a href="delete/${userProfile.id}.htm">delete</a></td>
+    </tr>
+</c:forEach>
+</
+</c:if>
+ -->
+</div>

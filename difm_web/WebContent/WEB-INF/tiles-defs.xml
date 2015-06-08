@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+	<definition name="layout" template="/WEB-INF/tiles/layout.jsp">
+		<put-attribute name="title" value="Broker Net Home" />
+		<put-attribute name="header" value="/jsp/header.jsp" />
+		<put-attribute name="error" value="/jsp/errors.jsp" />
+		<put-attribute name="content" value="/jsp/home.jsp" />
+		<put-attribute name="footer" value="/jsp/footer.jsp" />
+	</definition>
+
+	<definition name="layoutWithoutTree" template="/WEB-INF/tiles/layout.jsp">
+		<put-attribute name="title" value="Template" />
+		<put-attribute name="header" value="/WEB-INF/tiles/header.jsp" />
+		<put-attribute name="error" value="/WEB-INF/jsp/errors.jsp" />
+		<put-attribute name="tree" value="/WEB-INF/tiles/emptyTree.jsp" />
+	</definition>
+
+	<definition name="home" extends="layout">
+		<put-attribute name="title" value="Broker Net Home" />
+		<put-attribute name="header" value="/jsp/header.jsp" />
+		<put-attribute name="error" value="/jsp/errors.jsp" />
+		<put-attribute name="content" value="/jsp/home.jsp" />
+		<put-attribute name="footer" value="/jsp/footer.jsp" />
+	</definition>
+
+	<definition name="viewEntries" extends="layout">
+		<put-attribute name="title" value="Broker Net Home" />
+		<put-attribute name="header" value="/jsp/header.jsp" />
+		<put-attribute name="error" value="/jsp/errors.jsp" />
+		<put-attribute name="content" value="/jsp/viewEntries.jsp" />
+		<put-attribute name="footer" value="/jsp/footer.jsp" />
+	</definition>
+
+	<definition name="propertyDetails" extends="layout">
+		<put-attribute name="title" value="Broker Net Home" />
+		<put-attribute name="header" value="/jsp/header.jsp" />
+		<put-attribute name="error" value="/jsp/errors.jsp" />
+		<put-attribute name="content" value="/jsp/propertyDetails.jsp" />
+		<put-attribute name="footer" value="/jsp/footer.jsp" />
+	</definition>
+
+	<definition name="editEntry" extends="layout">
+		<put-attribute name="title" value="Broker Net Home" />
+		<put-attribute name="header" value="/jsp/header.jsp" />
+		<put-attribute name="error" value="/jsp/errors.jsp" />
+		<put-attribute name="content" value="/jsp/editEntry.jsp" />
+		<put-attribute name="footer" value="/jsp/footer.jsp" />
+	</definition>
+
+	<definition name="search" extends="layout">
+		<put-attribute name="title" value="Broker Net Home" />
+		<put-attribute name="header" value="/jsp/header.jsp" />
+		<put-attribute name="error" value="/jsp/errors.jsp" />
+		<put-attribute name="content" value="/jsp/search.jsp" />
+		<put-attribute name="footer" value="/jsp/footer.jsp" />
+	</definition>
+
+	<definition name="searchResults" extends="layout">
+		<put-attribute name="title" value="Broker Net Home" />
+		<put-attribute name="header" value="/jsp/header.jsp" />
+		<put-attribute name="error" value="/jsp/errors.jsp" />
+		<put-attribute name="content" value="/jsp/searchResults.jsp" />
+		<put-attribute name="footer" value="/jsp/footer.jsp" />
+	</definition>
+
+	<definition name="userProfile" extends="layout">
+		<put-attribute name="title" value="Broker Net Home" />
+		<put-attribute name="header" value="/jsp/header.jsp" />
+		<put-attribute name="error" value="/jsp/errors.jsp" />
+		<put-attribute name="content" value="/jsp/userProfile.jsp" />
+		<put-attribute name="footer" value="/jsp/footer.jsp" />
+	</definition>
+</tiles-definitions>

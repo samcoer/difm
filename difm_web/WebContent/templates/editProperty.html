@@ -1,0 +1,90 @@
+<h3>Edit Entry</h3>
+<div class="editentry">
+	<div>
+		<label for="bhk">BHK</label> <select
+			ng-model="property.bhk"
+			ng-options="bhkOption.value as bhkOption.name for bhkOption in bhkOptions">
+		</select>
+	</div>
+	<div>
+		<label for="houseNo">House/Flat No.</label> <input
+			ng-model="property.houseNo" name="houseNo" />
+	</div>
+	<div>
+		<label for="floor">Floor No.</label> <input ng-model="property.floor"
+			name="floor" />
+	</div>
+	<div>
+		<label for="address">Address</label> <input
+			ng-model="property.address" id="address" name="address" type="text" />
+	</div>
+	<div>
+		<label for="locality">Locality</label> <input
+			ng-model="property.locality" id="locality" name="locality"
+			type="text" />
+	</div>
+	<div>
+		<label for="city">City</label> <input ng-model="property.city"
+			name="city" />
+	</div>
+	<div>
+		<label for="rent">Rent</label> <input ng-model="property.rent"
+			name="rent" />
+	</div>
+	<div>
+		<label for="deposit">Deposit</label> <input
+			ng-model="property.deposit" name="deposit" />
+	</div>
+	<div>
+
+		<label for="availableFrom">Available From</label> <input
+			ng-model="property.availableFrom" name="availableFrom" type="date" />
+	</div>
+	<div>
+		<label for="available">Available</label> <select
+			ng-model="property.available"
+			ng-options="avitems.value as avitems.name for avitems in available">
+		</select>
+	</div>
+	<div>
+		<label for="type">Type</label> <select
+			ng-model="property.type" ng-options="t.value as t.name for t in type">
+		</select>	
+	</div>
+	<div>
+
+		<label for="furnished">Furnishing</label> <select 
+			ng-model="property.furnished" ng-options="f.value as f.name for f in furnished">
+		</select>
+	</div>
+	<div>
+
+		<label for="owner">Owner Name</label> <input ng-model="property.owner"
+			name="owner" />
+
+	</div>
+	<div>
+		<label for="ownerPhone">Owner Phone</label> <input
+			ng-model="property.ownerPhone" name="ownerPhone" />
+	</div>
+	<div>
+
+		<label for="ownerPan">Owner PAN</label> <input
+			ng-model="property.ownerPan" name="ownerPan" />
+	</div>
+	<div>
+
+		<label for="blocked">Blocked (Y/N)</label> <select
+			ng-model="property.blocked"
+			ng-options="item.value as item.name for item in blocked"></select>
+	</div>
+	<div>
+		<label for="favorite">Favourite (Y/N)</label> <select
+			ng-model="property.favorite"
+			ng-options="favitems.value as favitems.name for favitems in favorite">
+		</select>
+	</div>
+	<div>
+		<input type="button" value="Update" ng-click="updateProperty()" />
+	</div>
+</div>

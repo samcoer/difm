@@ -1,0 +1,74 @@
+<div ng-controller="SearchCtrl" class="searchentry">
+	<h2>Search Property</h2>
+	<br>
+	<hr> 
+
+	<div id="search"> 
+	<table width="100%">
+		<tr>
+			<td width="10%"> Quick Search </td>
+			<td> <a href="1bhk.htm">1BHK</a></td>
+			<td> <a href="2bhk.htm">2BHK</a></td>
+			<td> <a href="3bhk.htm">3BHK</a></td>
+		</tr>
+	</table>
+		<hr>
+		<br>
+			<label class="formlabel" for="bhk">BHK</label>
+			<input ng-model="property.bhk" class="formfield" type="text" name="bhk"/>
+			        
+			<label for="availableFrom">Available From</label>
+			<input ng-model="property.availableFrom" class="formfield" type="date" name="availableFrom" />
+	    
+	        <label for="houseNo">House/Flat No.</label>
+	        <input ng-model="property.houseNo" class="formfield" type="text" name="houseNo" />
+	        
+	        
+	        <label for="available">Available (Y/N)</label>
+        	<select ng-model="property.available" class="formfield" ng-options= "avitems.value as avitems.name for avitems in available"> </select>
+	        
+	        <label for="floor">Floor No.</label>
+	        <input ng-model="property.floor" class="formfield" type="text" name="floor" />
+	        
+	        <label for="type">Type (Individual/Apartment)</label>
+	        <input ng-model="property.type" class="formfield" type="text" name="type" />
+	    
+	    
+	        <label for="address">Address</label>
+	        <input ng-model="property.address" class="formfield" type="text" name="address" />
+	        
+	        <label for="furnished">Furnishing (Fully Furnished/Semi Furnished/Un Furnished)</label>
+	        <input ng-model="property.furnished" class="formfield" type="text" name="furnished" />
+	    
+	    
+	        <label for="locality">Locality</label>
+	        <input ng-model="property.locality" class="formfield" type="text" name="locality" />
+	        
+	        <label for="owner">Owner Name</label>
+	        <input ng-model="property.owner" class="formfield" type="text" name="owner" />
+	    
+	    
+	        <label for="city">City</label>
+	        <input ng-model="property.city" class="formfield" type="text" name="city" />
+	        
+	        <label for="ownerPhone">Owner Phone</label>
+	        <input ng-model="property.ownerPhone" class="formfield" type="text" name="ownerPhone" />
+	    
+	    
+	        <label for="rent">Rent</label>
+	        <input ng-model="property.rent" class="formfield" type="text" name="rent" />
+	        
+	        <label for="ownerPan">Owner PAN</label>
+	        <input ng-model="property.ownerPan" class="formfield" type="text" name="ownerPan" />
+	    
+	    
+	        <label for="deposit">Deposit</label>
+	        <input ng-model="property.deposit" class="formfield" type="text" name="deposit" />
+	        
+			<label for="blocked">Blocked (Y/N)</label>
+    		<select ng-model="property.blocked" class="formfield" ng-options="item.value as item.name for item in blocked" ></select>
+			<br>
+			<br>
+	        <input type="submit" value="Search"/>
+	</div>
+</div>

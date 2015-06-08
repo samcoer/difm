@@ -1,0 +1,36 @@
+<div ng-controller="SearchResultsCtrl" class="searchresults">
+	<h2>Search Results</h2>
+	<table class="searchresults">
+		<tr>
+			<th>Select</th>
+		    <th>BHK</th>
+		    <th>Rent</th>
+		    <th>Deposit</th>
+		    <th>Locality</th>
+		    <th>&nbsp;</th>
+		</tr>
+		<tr ng-repeat="property in properties">
+			<td><input type="checkbox" name="checkbox" value="value"></td>
+		   	<td>{{property.bhk}}</td>
+	        <td>{{property.houseNo}}</td>
+	        <td>{{property.rent}}</td>
+	        <td>{{property.deposit}}</td>
+	        <td>{{property.furnished}}</td>
+	        <td>{{property.availableFrom}}</td>       
+	        <td><a href="#/editEntry/{{property.id}}">Edit</a></td>
+	       	<td><a href="#/shareEntry/{{property.id}}"">Share</a></td>
+	       	
+
+	       	<td><a href="/block.htm?id=${propertyDetails.id}">Block</a></td>
+	       	<td><a href="#/favoriteEntry/{{property.id}}">Favourite</a></td>
+		</tr>
+	</table>
+	<table>
+	 	<tr>
+	 		<td><a href="#/shareAll/{{property.id}}">Share</a></td>
+	 		<td><a href="#/availableAll/{{property.id}}">Avaiable</a></td>
+	 		<td><a href="#/blockAll/{{property.id}}">Block</a></td>
+	 		<td><a href="#/favoriteAll/{{property.id}}">Favourite</a></td>
+	 	</tr>
+	</table>
+</div>

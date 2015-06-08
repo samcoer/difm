@@ -1,0 +1,35 @@
+<h3>Property Entries</h3>
+<div class="viewentries">
+	<div><a href="#/createEntry"><input type="submit" value="Create New"/></a></div>
+	<div class="header-search"><input type="search" placeholder="Quick Search" ng-model="quickSearch"></div>
+	<div style="padding: 2rem;">
+		<table class="viewallentries">
+			<tr>
+			<th>id</th>
+				<th>Locality</th>
+				<th>Owner</th>
+			    <th>BHK</th>
+			    <th>House No.</th>
+			    <th>Rent</th>
+			    <th>Deposit</th>
+			    <th>Furnished/Unfurnished</th>
+			    <th>Available From</th>
+			    <th>&nbsp;</th>
+			    <th>&nbsp;</th>
+			</tr>
+		    <tr ng-repeat="property in properties|filter:quickSearch:strict|orderBy:'id':true">
+		    <td>{{property.id}}</td>
+		    	<td>{{property.locality}}</td>
+		    	<td>{{property.owner}}</td>
+		        <td>{{property.bhk}}</td>
+		        <td>{{property.houseNo}}</td>
+		        <td>{{property.rent}}</td>
+		        <td>{{property.deposit}}</td>
+		        <td>{{property.furnished}}</td>
+		        <td>{{property.availableFrom}}</td>
+		        <td><a href="#/editEntry/{{property.id}}">Edit</a></td>
+		        <td><a href="#" ng-click="deleteProperty($event, property.id)">Delete</a></td>
+		    </tr>
+		</table>
+	</div>
+</div>

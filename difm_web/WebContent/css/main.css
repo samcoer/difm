@@ -1,0 +1,12 @@
+#header {
+    height: 30px;
+}
+#footer {
+    height: 15px;
+    position: absolute;
+    bottom: 10px;
+}
+#content {
+    height: 95%;
+    margin-bottom: 30px;
+}

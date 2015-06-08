@@ -1,0 +1,6 @@
+omtSendOrderUrl = http://gearhome.corp.paetec.com/MasterSalesOrder/CreateMSO/PADO/PADO_SOAP_CreateMSO_dev.asp
+vsrWebserviceUrl = http://10.20.11.85/VSRActivityService/VSRPADOService.asmx
+sagUrl = http://addrsvc-prd.mcld.net:9080/AddressService/AddressService
+networkApiUrl =  http://aixtest03.corp.paetec.com:8080/networkInfo/servlet/NetworkInfo
+employeeServiceUrl = http://ws-test1.corp.paetec.com/EmployeeServiceV1/EmployeeService
+sagTimeOut = 2000

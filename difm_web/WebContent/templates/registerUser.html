@@ -1,0 +1,13 @@
+<div ng-controller="RegisterCtrl" class="registeruser">
+	<div id="register">
+		<input type="email" id="username" name="username" placeholder = "Username/Email" class="username"/>
+	    <input type="password" id="password" name="password" placeholder = "Password" class="password"/>
+	    
+	    <input id="register" class="input" name="submit" type="submit" value="Register" ng-click='register()';/>
+	    <input id="forgot" class="input" name="submit" type="submit" value="Forgot Password" ng-click='forgotPasswordScreen()';/>
+	</div>
+	<span id="registerSuccess" display:none;>
+		Registration Successful. Please go to login page to login.
+		<input id="loginScreen" class="input" name="submit" type="submit" value="Login" ng-click='loginScreen()';/>
+	</span>
+</div>

@@ -1,0 +1,59 @@
+.formlabel{
+	
+}
+.formfield{
+	border-radius:7px;
+	box-shadow: 0px;
+	height: 30px;
+}
+
+div{
+	display: block;
+	/*padding: 2rem;*/
+}
+
+.viewentries input[type=submit]{
+	width: inherit;
+}
+
+.viewallentries {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    width: 80%;
+    border-collapse: collapse;
+}
+
+.viewallentries td, .viewallentries th {
+    font-size: 1em;
+    border: 1px solid #377F7B;
+    padding: 3px 4px 2px 4px;
+}
+
+.viewallentries th {
+    font-size: 1.1em;
+    text-align: left;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    background-color: #429994;
+    color: #ffffff;
+}
+
+.viewallentries tr.alt td {
+    color: #000000;
+    background-color: #EAF2D3;
+}
+
+.editentry{
+	margin-left: 5rem;
+}
+
+.editentry label {
+	min-width: 20rem;
+}
+
+.editentry div{
+	min-height: 4rem;
+}
+
+.header-search{
+	padding: 2rem 2rem 0rem 2rem;
+}

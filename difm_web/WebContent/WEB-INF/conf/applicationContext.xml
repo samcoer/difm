@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:jaxws="http://cxf.apache.org/jaxws"
+    xmlns:util="http://www.springframework.org/schema/util"
+    xmlns:security="http://www.springframework.org/schema/security"
+    xmlns:beans="http://www.springframework.org/schema/beans"
+    xmlns="http://www.springframework.org/schema/beans"
+    xsi:schemaLocation="
+							http://www.springframework.org/schema/beans 
+							http://www.springframework.org/schema/beans/spring-beans.xsd 
+							http://cxf.apache.org/jaxws 
+							http://cxf.apache.org/schemas/jaxws.xsd 
+							http://www.springframework.org/schema/util
+							http://www.springframework.org/schema/util/spring-util-3.1.xsd
+							http://www.springframework.org/schema/context 
+							http://www.springframework.org/schema/context/spring-context-3.1.xsd
+							http://www.springframework.org/schema/aop 
+							http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+							http://www.springframework.org/schema/mvc 
+        					http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+         					http://www.springframework.org/schema/security
+							http://www.springframework.org/schema/security/spring-security-3.1.xsd
+							http://www.springframework.org/schema/beans
+							http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+
+    <context:component-scan base-package="com.enablee" />
+    
+    <aop:aspectj-autoproxy />
+
+    <security:global-method-security pre-post-annotations="enabled" />
+
+    <bean class="org.springframework.beans.factory.config.CustomScopeConfigurer" >
+
+        <property name="scopes" >
+
+            <map>
+
+                <entry key="thread" >
+
+                    <bean class="org.springframework.context.support.SimpleThreadScope" />
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+    <util:properties
+        id="integrationProperties"
+        location="classpath:integrationResources.properties" />
+
+    <util:properties
+        id="applicationProperties"
+        location="classpath:applicationResources.properties" />
+
+    <import resource="hibernateSpringContext.xml" />
+
+    <!--
+    <bean id="employeeServiceLocator" class="com.paetec.padolight.employeeservice.webservice.EmployeeServiceLocator"/>
+	<bean id="employeeServiceFactory" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+	            <property name="targetObject">
+	                <ref local="employeeServiceLocator"/>
+	            </property>
+	            <property name="targetMethod">
+	                <value>setEmployeePortEndpointAddress</value>
+	            </property>
+	            <property name="arguments">
+	                <value>#{integrationProperties.employeeServiceUrl}</value>
+	            </property>
+	</bean>
+	<bean id="employeeServiceBinding" factory-bean="employeeServiceLocator" factory-method="getEmployeePort"/>
+	
+	<bean id="codeType" class="com.paetec.padolight.employeeservice.webservice.CodeType">
+		<constructor-arg name="_value" value="IDM"/>
+	</bean>
+    -->
+
+
+    <!--
+    <context:component-scan base-package="com">
+		<context:include-filter type="regex" expression="paetec\..*" />
+		Excluding Controller layer here since it has already been loaded as a part 
+			of DsipatcherServlet configuration in the file padoLightDispatcherServletContext.xml 
+		<context:exclude-filter type="regex" expression="paetec.padolight.controller.*" />
+	</context:component-scan>
+    -->
+
+</beans>
