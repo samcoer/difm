@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>enablee</groupId>
-	<artifactId>enablee</artifactId>
+	<groupId>difm</groupId>
+	<artifactId>difm</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>Broker Net Web</name>
+	<name>DIFM Web</name>
 
 	<properties>
 		<aspectj.version>1.7.2</aspectj.version>
@@ -14,6 +14,7 @@
 		<slf4j.version>1.7.5</slf4j.version>
 		<jackson.databind-version>2.4.1</jackson.databind-version>
 		<spring.version>4.0.6.RELEASE</spring.version>
+		<spring.sec.version>4.0.1.RELEASE</spring.sec.version>
 		<maven.compiler.target>1.6</maven.compiler.target>
 		<maven.compiler.source>1.6</maven.compiler.source>
 	</properties>
@@ -266,32 +267,32 @@
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-acl</artifactId>
-			<version>3.1.4.RELEASE</version>
+			<version>${spring.sec.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-aspects</artifactId>
-			<version>3.1.4.RELEASE</version>
+			<version>${spring.sec.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-config</artifactId>
-			<version>3.1.4.RELEASE</version>
+			<version>${spring.sec.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-core</artifactId>
-			<version>3.1.4.RELEASE</version>
+			<version>${spring.sec.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-taglibs</artifactId>
-			<version>3.1.4.RELEASE</version>
+			<version>${spring.sec.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-web</artifactId>
-			<version>3.1.4.RELEASE</version>
+			<version>${spring.sec.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>c3p0</groupId>
@@ -336,6 +337,14 @@
             <artifactId>jackson-databind</artifactId>
             <version>${jackson.databind-version}</version>
         </dependency>
+        
+		<dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-framework-bom</artifactId>
+        <version>4.0.0.RELEASE</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
 	</dependencies>
 
 	<build>

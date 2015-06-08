@@ -1,4 +1,7 @@
-package com.enablee.ui.controller;
+package info.difm.ui.controller;
+
+import info.difm.biz.service.UserProfileService;
+import info.difm.db.bo.UserProfile;
 
 import java.util.Map;
 
@@ -10,9 +13,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-
-import com.enablee.biz.service.UserProfileService;
-import com.enablee.db.bo.UserProfile;
  
 @Controller
 public class UserProfileController {

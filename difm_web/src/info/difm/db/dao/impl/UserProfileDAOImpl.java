@@ -1,10 +1,11 @@
-package com.enablee.db.dao.impl;
+package info.difm.db.dao.impl;
+
+import info.difm.db.bo.UserProfile;
+import info.difm.db.dao.UserProfileDAO;
 
 import org.springframework.stereotype.Repository;
 
 import com.cerebsoft.fw.dao.impl.HibernateDaoImpl;
-import com.enablee.db.bo.UserProfile;
-import com.enablee.db.dao.UserProfileDAO;
  
 @Repository
 public class UserProfileDAOImpl extends HibernateDaoImpl<UserProfile, Long> implements UserProfileDAO {

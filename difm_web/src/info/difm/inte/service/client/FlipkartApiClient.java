@@ -1,4 +1,4 @@
-package com.enablee.inte.service.client;
+package info.difm.inte.service.client;
 
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;

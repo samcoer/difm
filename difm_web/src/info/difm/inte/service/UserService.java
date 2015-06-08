@@ -1,4 +1,8 @@
-package com.enablee.inte.service;
+package info.difm.inte.service;
+
+import info.difm.biz.service.UserProfileService;
+import info.difm.db.bo.UserProfile;
+import info.difm.inte.service.client.FlipkartApiClient;
 
 import java.util.List;
 
@@ -14,10 +18,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.enablee.biz.service.UserProfileService;
-import com.enablee.db.bo.UserProfile;
-import com.enablee.inte.service.client.FlipkartApiClient;
 
 @RestController
 @RequestMapping(value = "/user")

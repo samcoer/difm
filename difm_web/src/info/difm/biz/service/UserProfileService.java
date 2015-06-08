@@ -1,8 +1,8 @@
-package com.enablee.biz.service;
+package info.difm.biz.service;
+
+import info.difm.db.bo.UserProfile;
 
 import java.util.List;
-
-import com.enablee.db.bo.UserProfile;
 
 public interface UserProfileService {
 	

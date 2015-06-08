@@ -1,4 +1,4 @@
-package com.enablee.db.bo;
+package info.difm.db.bo;
 
 import java.sql.Date;
 import java.util.Set;

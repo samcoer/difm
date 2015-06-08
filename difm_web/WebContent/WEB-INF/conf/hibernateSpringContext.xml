@@ -32,7 +32,7 @@
 			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
 				<prop key="hibernate.hbm2ddl.auto">create</prop>
-				<prop key="hibernate.default_schema">enablee</prop>
+				<prop key="hibernate.default_schema">difm</prop>
 				<prop key="hibernate.c3p0.min_size">1</prop>
 				<prop key="hibernate.c3p0.max_size">100</prop>
 				<prop key="hibernate.c3p0.acquire_increment">2</prop>
@@ -53,7 +53,7 @@
 		
 		<property name="packagesToScan">
 			<list>
-				<value>com.enablee.db.bo</value>
+				<value>info.difm.db.bo</value>
 			</list>
 		</property>
 	</bean>

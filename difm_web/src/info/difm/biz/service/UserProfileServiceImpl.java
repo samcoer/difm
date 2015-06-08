@@ -1,13 +1,13 @@
-package com.enablee.biz.service;
+package info.difm.biz.service;
+
+import info.difm.db.bo.UserProfile;
+import info.difm.db.dao.UserProfileDAO;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import com.enablee.db.bo.UserProfile;
-import com.enablee.db.dao.UserProfileDAO;
 
 
 @Service

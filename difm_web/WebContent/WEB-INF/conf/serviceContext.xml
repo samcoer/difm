@@ -39,6 +39,6 @@
     
     <beans:bean id="jacksonObjectMapper" class="com.fasterxml.jackson.databind.ObjectMapper"/>
      
-    <context:component-scan base-package="com.enablee.inte.service" />
+    <context:component-scan base-package="info.difm.inte.service" />
 </beans:beans>
      
