@@ -2,46 +2,46 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\bhatt\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
-        <dex dex="C:\Work\difm\src\DoItForMe\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-ac4d99cd0e2de99f4fc640a83f3909bdba29cc0c.jar" />
-    </item>
-    <item
-        jar="C:\Work\difm\src\DoItForMe\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
-        <dex dex="C:\Work\difm\src\DoItForMe\app\build\intermediates\pre-dexed\debug\classes-00ac08f94e2ab99808d31cf7580c8d2b43bc0cd8.jar" />
-    </item>
-    <item
-        jar="C:\Work\difm\src\DoItForMe\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
-        <dex dex="C:\Work\difm\src\DoItForMe\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-09b0d61e41358c4912a99647fe9bc911161c4c0e.jar" />
-    </item>
-    <item
-        jar="C:\Work\difm\src\DoItForMe\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
-        <dex dex="C:\Work\difm\src\DoItForMe\app\build\intermediates\pre-dexed\debug\classes-57ba6e6061555744d7bd82a07a7edc5a7e572aa5.jar" />
-    </item>
-    <item
-        jar="C:\Users\bhatt\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-android\1.1.4\129874135e6081269ace2312092031558865de12\bolts-android-1.1.4.jar"
+        jar="/Users/ptanwar/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-android/1.1.4/129874135e6081269ace2312092031558865de12/bolts-android-1.1.4.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="129874135e6081269ace2312092031558865de12">
-        <dex dex="C:\Work\difm\src\DoItForMe\app\build\intermediates\pre-dexed\debug\bolts-android-1.1.4-dfb40e47e4e2e69d3eef6e5e6711fc9808d8b914.jar" />
+        <dex dex="/Users/ptanwar/app/difm/DoItForMe/app/build/intermediates/pre-dexed/debug/bolts-android-1.1.4-2bdcfcfbd0b5c94513a4b2725768243a54e3efcc.jar" />
     </item>
     <item
-        jar="C:\Work\difm\src\DoItForMe\app\build\intermediates\exploded-aar\com.facebook.android\facebook-android-sdk\4.0.0\classes.jar"
+        jar="/Users/ptanwar/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="/Users/ptanwar/app/difm/DoItForMe/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-49946d90678f9015f22e44305235ca944d372954.jar" />
+    </item>
+    <item
+        jar="/Users/ptanwar/app/difm/DoItForMe/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="/Users/ptanwar/app/difm/DoItForMe/app/build/intermediates/pre-dexed/debug/classes-07b58550ecda1fc27fa342e52466c0a76067d1ca.jar" />
+    </item>
+    <item
+        jar="/Users/ptanwar/app/difm/DoItForMe/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/Users/ptanwar/app/difm/DoItForMe/app/build/intermediates/pre-dexed/debug/classes-2c950dabce0010ef1e99a68fd3800ae947083023.jar" />
+    </item>
+    <item
+        jar="/Users/ptanwar/app/difm/DoItForMe/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="/Users/ptanwar/app/difm/DoItForMe/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-5648415b764be8783bf6ff252899747ddd33a806.jar" />
+    </item>
+    <item
+        jar="/Users/ptanwar/app/difm/DoItForMe/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.0.0/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="0f254ec13d6671680482d2218f01ecf14dfa93e6">
-        <dex dex="C:\Work\difm\src\DoItForMe\app\build\intermediates\pre-dexed\debug\classes-d67d741c4baa588f31019873c03c489fd06899d8.jar" />
+        <dex dex="/Users/ptanwar/app/difm/DoItForMe/app/build/intermediates/pre-dexed/debug/classes-95d368f572042cc58fbf1a1749da1a742fbfbb2d.jar" />
     </item>
 
 </items>
