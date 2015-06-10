@@ -1,38 +1,29 @@
 package info.difm.db.bo;
 
 import java.sql.Date;
-import java.util.Set;
+import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Transient;
-
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name = "userprofile")
 public class UserProfile {
 	private Long id;
-	private String firstName;
-	private String lastName;
+	private String fullName;
 	private String userName;
+	private String email;
 	private String password;
 	private Long phoneNumber;
-	private String locality;
-	private String city;
 	private Date dateOfBirth;
+	private String gender;
 	private String role;
-	
-	//Only for UI
-	private boolean checked;
-	@JsonBackReference
+	private List<Address> address;
 	
 	@Id
 	@GeneratedValue
@@ -43,23 +34,23 @@ public class UserProfile {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getFirstName() {
-		return firstName;
+	public String getFullName() {
+		return fullName;
 	}
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-	public String getLastName() {
-		return lastName;
-	}
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
 	}
 	public String getUserName() {
 		return userName;
 	}
 	public void setUserName(String userName) {
 		this.userName = userName;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	public String getPassword() {
 		return password;
@@ -73,23 +64,17 @@ public class UserProfile {
 	public void setPhoneNumber(Long phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
-	public String getLocality() {
-		return locality;
-	}
-	public void setLocality(String locality) {
-		this.locality = locality;
-	}
-	public String getCity() {
-		return city;
-	}
-	public void setCity(String city) {
-		this.city = city;
-	}
 	public Date getDateOfBirth() {
 		return dateOfBirth;
 	}
 	public void setDateOfBirth(Date dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
+	}
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 	public String getRole() {
 		return role;
@@ -97,13 +82,11 @@ public class UserProfile {
 	public void setRole(String role) {
 		this.role = role;
 	}
-	
-	
-	@Transient	
-	public boolean isChecked() {
-		return checked;
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "userProfile")
+	public List<Address> getAddress() {
+		return address;
 	}
-	
-	
-	
+	public void setAddress(List<Address> address) {
+		this.address = address;
+	}
 }

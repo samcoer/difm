@@ -22,7 +22,6 @@ public class UserProfileServiceImpl implements UserProfileService{
  
     @Transactional
     public List<UserProfile> listUser() throws Exception {
- 
         return userProfileDAO.findAll(UserProfile.class);
     }
  

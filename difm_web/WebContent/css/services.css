@@ -1,0 +1,10 @@
+@CHARSET "ISO-8859-1";
+.services td{
+	padding: 10px;
+	min-width: 50px;
+}
+.services th{
+	padding: 10px;
+	min-width: 150px;
+	text-align: left;
+}

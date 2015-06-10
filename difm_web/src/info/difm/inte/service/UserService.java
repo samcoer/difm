@@ -1,9 +1,11 @@
 package info.difm.inte.service;
 
 import info.difm.biz.service.UserProfileService;
+import info.difm.db.bo.Address;
 import info.difm.db.bo.UserProfile;
-import info.difm.inte.service.client.FlipkartApiClient;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -26,19 +28,15 @@ public class UserService {
 	@Autowired
 	private UserProfileService userProfileService;
 	
-	@Autowired
-	private FlipkartApiClient flipkartApiClient;
-
-	
 	@RequestMapping(method = RequestMethod.GET, value = "/{id}")
 	public UserProfile get(HttpServletRequest request, @PathVariable("id") Long id)
 			throws Exception {
-		flipkartApiClient.getTopOffers();
-		//return userProfileService.getUser(id);
-		UserProfile userProfile = new UserProfile();
-		userProfile.setCity("NOIDA");
-		userProfile.setFirstName("Chetan");
-		return userProfile;
+		if(id==0L){
+			UserProfile user = new UserProfile();
+			user.setAddress(Arrays.asList(new Address()));
+			return user;
+		}
+		return userProfileService.getUser(id);
 	}
 
 	@RequestMapping(method = RequestMethod.GET)
