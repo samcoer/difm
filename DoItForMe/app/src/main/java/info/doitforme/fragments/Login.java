@@ -1,33 +1,41 @@
 package info.doitforme.fragments;
 
-import android.support.v4.app.Fragment;
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
-import com.facebook.FacebookSdk;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 
 import info.doitforme.R;
+import info.doitforme.integration.ServiceFactory;
+import info.doitforme.integration.bo.User;
+import info.doitforme.integration.service.UserService;
+import retrofit.Callback;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 
 /**
  * Created by ptanwar on 06/06/15.
  */
 public class Login extends Fragment {
-    private ImageButton btnRegister;
-    private ImageButton btnLogin;
+    private Button btnRegister;
+    private Button btnLogin;
     private LoginButton btnLoginFB;
     private ImageButton btnLoginGP;
     private CallbackManager callbackManager;
 
     public Login() {
+
     }
 
     @Override
@@ -38,7 +46,7 @@ public class Login extends Fragment {
     }
 
     private void createButtons(View rootView) {
-        btnLogin = (ImageButton) rootView.findViewById(R.id.btnLogin);
+        btnLogin = (Button) rootView.findViewById(R.id.btnLogin);
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,11 +64,27 @@ public class Login extends Fragment {
             }
         });
 
-        btnRegister = (ImageButton) rootView.findViewById(R.id.btnRegister);
+        btnRegister = (Button) rootView.findViewById(R.id.btnRegister);
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d("TEST","Register");
+//                ((UserService) ServiceFactory.getService(UserService.class)).get(0L, new Callback() {
+//                    @Override
+//                    public void success(Object user, Response response) {
+//                       Log.d("TEST", "success");
+//                    }
+//
+//                    @Override
+//                    public void failure(RetrofitError retrofitError) {
+//                       Log.d("TEST", "failure");
+//                    }
+//                });
+                Fragment registrationFragment = Register.newInstance();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.container, registrationFragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
             }
         });
     }
@@ -69,7 +93,8 @@ public class Login extends Fragment {
         callbackManager = CallbackManager.Factory.create();
         btnLoginFB = (LoginButton) rootView.findViewById(R.id.btnLoginFB);
         btnLoginFB.setReadPermissions("user_friends");
-        btnLoginFB.setFragment(this);
+        //TODO Check if required, commented by Chetan
+        //btnLoginFB.setFragment(this);
         btnLoginFB.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {

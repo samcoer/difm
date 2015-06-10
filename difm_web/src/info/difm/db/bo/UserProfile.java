@@ -82,7 +82,7 @@ public class UserProfile {
 	public void setRole(String role) {
 		this.role = role;
 	}
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "userProfile")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "userProfile")
 	public List<Address> getAddress() {
 		return address;
 	}

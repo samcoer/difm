@@ -22,7 +22,7 @@
             android:id="@+id/textView"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="50dp" />
+            android:layout_marginBottom="25dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -59,53 +59,56 @@
             android:layout_gravity="center_horizontal" />
 
         <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center_horizontal"
-            android:layout_marginTop="15dp">
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="10dp">
 
-
-            <ImageButton
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/btnLogin"
-                android:layout_margin="10dp"
-                android:src="@drawable/signin"
-                android:baselineAlignBottom="false"
-                android:nestedScrollingEnabled="false" />
+                android:gravity="center"
+                android:layout_marginTop="20dp">
 
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/btnRegister"
-                android:layout_margin="10dp"
-                android:src="@drawable/signup" />
-        </LinearLayout>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Login"
+                    android:id="@+id/btnLogin"
+                    android:layout_gravity="center"
+                    android:nestedScrollingEnabled="false"
+                    android:background="#ff8389ff"
+                    android:layout_margin="10dp" />
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Register"
+                    android:id="@+id/btnRegister"
+                    android:background="#ff8389ff"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp" />
+            </LinearLayout>
 
             <com.facebook.login.widget.LoginButton
                 android:id="@+id/btnLoginFB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="30dp" />
+                android:layout_gravity="center"
+                android:layout_margin="10dp" />
 
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/btnLoginGP"
-                android:layout_margin="10dp"
                 android:src="@drawable/gp"
                 android:cropToPadding="false"
-                android:adjustViewBounds="false" />
+                android:adjustViewBounds="false"
+                android:layout_gravity="center"
+                android:layout_margin="10dp" />
+
+
         </LinearLayout>
 
     </LinearLayout>

@@ -76,7 +76,7 @@ public class Address {
 	public void setPincode(Integer pincode) {
 		this.pincode = pincode;
 	}
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "user_id", nullable = false)
 	public UserProfile getUserProfile() {
 		return userProfile;
