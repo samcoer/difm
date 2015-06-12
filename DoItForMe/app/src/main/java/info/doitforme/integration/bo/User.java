@@ -12,8 +12,8 @@ public class User {
     private String userName;
     private String email;
     private String password;
-    private Long phoneNumber;
-    private Date dateOfBirth;
+    private String phoneNumber;
+    private String dateOfBirth;
     private String gender;
     private String role;
     private List<Address> address;
@@ -42,6 +42,18 @@ public class User {
         this.userName = userName;
     }
 
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -58,20 +70,8 @@ public class User {
         this.password = password;
     }
 
-    public Long getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
-    }
-
-    public void setPhoneNumber(Long phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public Date getDateOfBirth() {
-        return dateOfBirth;
-    }
-
-    public void setDateOfBirth(Date dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
     }
 
     public String getGender() {

@@ -1,15 +1,24 @@
 package info.doitforme.fragments;
 
 import android.app.Activity;
+import android.app.FragmentTransaction;
+import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 import info.doitforme.R;
 import info.doitforme.integration.ServiceFactory;
@@ -32,6 +41,8 @@ public class Register extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private static SimpleDateFormat sdf = new SimpleDateFormat("dd/M/yyyy");
+    private static SimpleDateFormat sdfStandard = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -78,15 +89,57 @@ public class Register extends Fragment {
             @Override
             public void onClick(View v) {
                 User user = new User();
-                user.setFullName(((TextView)rootView.findViewById(R.id.txtFullName)).getText().toString());
-                user.setEmail(((TextView) rootView.findViewById(R.id.txtEmail)).getText().toString());
-                user.setPassword(((TextView) rootView.findViewById(R.id.txtPassword)).getText().toString());
-                //user.setDateOfBirth(((TextView)rootView.findViewById(R.id.txtDob)).getText().toString());
-                //user.setGender(((TextView)rootView.findViewById(R.id.txtFullName)).getText().toString());
+                TextView txtFullName = (TextView)rootView.findViewById(R.id.txtFullName);
+                //TODO validate full name
+                user.setFullName(txtFullName.getText().toString());
+
+                TextView txtEmail = (TextView) rootView.findViewById(R.id.txtEmail);
+                //TODO validate email
+                user.setEmail(txtEmail.getText().toString());
+
+                TextView txtPassword = (TextView) rootView.findViewById(R.id.txtPassword);
+                TextView txtRetypePassword = (TextView) rootView.findViewById(R.id.txtRetypePassword);
+                if(!txtPassword.getText().toString().equals(txtRetypePassword.getText().toString())){
+                    txtRetypePassword.setError("Password does not match");
+                    return;
+                }
+                //TODO validate password
+                user.setPassword(txtPassword.getText().toString());
+
+                TextView txtDob = (TextView)rootView.findViewById(R.id.txtDob);
+                String dob = txtDob.getText().toString();
+                //TODO Validate dob
+                try {
+                    user.setDateOfBirth(sdfStandard.format(sdf.parse(dob)));
+                }catch (ParseException pe){
+                    Log.d("TEST", "Unable to parse date of birth");
+                }
+
+                RadioGroup rgGender = (RadioGroup)rootView.findViewById(R.id.rgGender);
+                //TODO validate gender
+                if(rgGender.getCheckedRadioButtonId()!=-1){
+                    int id= rgGender.getCheckedRadioButtonId();
+                    View radioButton = rgGender.findViewById(id);
+                    int radioId = rgGender.indexOfChild(radioButton);
+                    RadioButton btnGender = (RadioButton) rgGender.getChildAt(radioId);
+                    String gender = (String) btnGender.getText();
+                    user.setGender(gender);
+                }
+
+                TelephonyManager tMgr = (TelephonyManager)getActivity().getSystemService(Context.TELEPHONY_SERVICE);
+                String mPhoneNumber = tMgr.getLine1Number();
+                user.setPhoneNumber(mPhoneNumber);
+
                 ((UserService)ServiceFactory.getService(UserService.class)).create(user, new Callback<User>() {
                     @Override
                     public void success(User user, Response response) {
                         Log.d("TEST", "Successfully created user");
+                        //Go to add task screen
+                        Fragment newTaskFragment = new NewTask();
+                        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                        transaction.replace(R.id.container, newTaskFragment);
+                        transaction.addToBackStack(null);
+                        transaction.commit();
                     }
 
                     @Override

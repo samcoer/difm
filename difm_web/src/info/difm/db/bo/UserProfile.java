@@ -1,6 +1,6 @@
 package info.difm.db.bo;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -19,7 +19,7 @@ public class UserProfile {
 	private String userName;
 	private String email;
 	private String password;
-	private Long phoneNumber;
+	private String phoneNumber;
 	private Date dateOfBirth;
 	private String gender;
 	private String role;
@@ -58,10 +58,10 @@ public class UserProfile {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public Long getPhoneNumber() {
+	public String getPhoneNumber() {
 		return phoneNumber;
 	}
-	public void setPhoneNumber(Long phoneNumber) {
+	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 	public Date getDateOfBirth() {
