@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -64,10 +65,22 @@ public class UserService {
 		}
 		request.getSession().setAttribute("USER_ID", id);
 	}
+	
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public boolean login(HttpServletRequest request, @RequestParam("userName") String userName, @RequestParam("password") String password)
+			throws Exception {
+		UserProfile userProfile = userProfileService.findUserByUserName(userName, password);
+		if(userProfile != null){
+			request.getSession().setAttribute("USER", userProfile);
+			return true;
+		}else{
+			return false;
+		}
+	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.OK)
-	public void update(@PathVariable("id") Long id,
+	public void update(@PathVariable("id") Long ixd,
 			@RequestBody String user) throws Exception {
 		// TODO: validation and data cleansing
 		org.codehaus.jackson.map.ObjectMapper objectMapper = new org.codehaus.jackson.map.ObjectMapper(); 

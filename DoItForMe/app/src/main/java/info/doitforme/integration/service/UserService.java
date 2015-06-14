@@ -3,6 +3,8 @@ package info.doitforme.integration.service;
 import info.doitforme.integration.bo.User;
 import retrofit.Callback;
 import retrofit.http.Body;
+import retrofit.http.Field;
+import retrofit.http.FormUrlEncoded;
 import retrofit.http.GET;
 import retrofit.http.POST;
 import retrofit.http.Path;
@@ -16,5 +18,9 @@ public interface UserService{
 
     @POST("/user")
     void create(@Body User user, Callback<User> cb);
+
+    @FormUrlEncoded
+    @POST("/user/login")
+    void login(@Field("userName") String userName, @Field("password") String password,  Callback<Boolean> cb);
 }
 

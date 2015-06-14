@@ -17,6 +17,9 @@ public class UserProfileServiceImpl implements UserProfileService{
 	
     @Transactional
     public void addUser(UserProfile userProfile) throws Exception {
+    	if(userProfile.getUserName() == null || userProfile.getUserName().isEmpty()){
+    		userProfile.setUserName(userProfile.getEmail());
+    	}
     	userProfileDAO.create(userProfile);
     }
  
@@ -35,6 +38,12 @@ public class UserProfileServiceImpl implements UserProfileService{
 	@Transactional
 	public UserProfile getUser(Long id) throws Exception {
 		return userProfileDAO.find(UserProfile.class, id);
+	}
+	
+	@Override
+	@Transactional
+	public UserProfile findUserByUserName(String userName, String password) throws Exception {
+		return userProfileDAO.findUserByUserName(userName, password);
 	}
 
 	@Override

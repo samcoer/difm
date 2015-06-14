@@ -12,4 +12,5 @@ public interface UserProfileService {
 	    public List<UserProfile> listUser() throws Exception;
 	    public void removeUser(Long id) throws Exception;
 		public List<UserProfile> listUsers() throws Exception;
+		public UserProfile findUserByUserName(String userName, String password) throws Exception;
 	}

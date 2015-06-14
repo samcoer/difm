@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -45,12 +47,47 @@ public class Login extends Fragment {
         return rootView;
     }
 
-    private void createButtons(View rootView) {
+    private void createButtons(final View rootView) {
         btnLogin = (Button) rootView.findViewById(R.id.btnLogin);
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d("TEST", "Login");
+                TextView txtUserName = (TextView) rootView.findViewById(R.id.txtLoginUserName);
+                TextView txtPassword = (TextView) rootView.findViewById(R.id.txtLoginPassword);
+                if (txtUserName.getText().toString().isEmpty()) {
+                    txtUserName.setError("User name can't be empty");
+                    return;
+                }
+                if (txtPassword.getText().toString().isEmpty()) {
+                    txtPassword.setError("Password can't be empty");
+                    return;
+                }
+
+                ((UserService) ServiceFactory.getService(UserService.class)).login(txtUserName.getText().toString(),
+                    txtPassword.getText().toString(), new Callback<Boolean>() {
+                        @Override
+                        public void success(Boolean result, Response response) {
+                            if(result) {
+                                Log.d("TEST", "Successfully logged in");
+                                //Go to add task screen
+                                Fragment newTaskFragment = new NewTask();
+                                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                                transaction.replace(R.id.container, newTaskFragment);
+                                transaction.addToBackStack(null);
+                                transaction.commit();
+                            }else{
+                                Log.d("TEST", "Username and/or password is not correct");
+                                Toast.makeText(getActivity(), "Username and/or password is not correct", Toast.LENGTH_LONG).show();
+                            }
+                        }
+
+                        @Override
+                        public void failure(RetrofitError error) {
+                            Log.d("TEST", error.getMessage());
+                        }
+                    }
+                );
             }
         });
 
@@ -60,7 +97,7 @@ public class Login extends Fragment {
         btnLoginGP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("TEST","GP Login");
+                Log.d("TEST", "GP Login");
             }
         });
 
@@ -68,7 +105,7 @@ public class Login extends Fragment {
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("TEST","Register");
+                Log.d("TEST", "Register");
 //                ((UserService) ServiceFactory.getService(UserService.class)).get(0L, new Callback() {
 //                    @Override
 //                    public void success(Object user, Response response) {
@@ -89,7 +126,7 @@ public class Login extends Fragment {
         });
     }
 
-    private void initFB(View rootView){
+    private void initFB(View rootView) {
         callbackManager = CallbackManager.Factory.create();
         btnLoginFB = (LoginButton) rootView.findViewById(R.id.btnLoginFB);
         btnLoginFB.setReadPermissions("user_friends");
