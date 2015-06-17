@@ -1,5 +1,6 @@
-package info.difm.biz.service;
+package info.difm.biz.service.impl;
 
+import info.difm.biz.service.UserProfileService;
 import info.difm.db.bo.UserProfile;
 import info.difm.db.dao.UserProfileDAO;
 
