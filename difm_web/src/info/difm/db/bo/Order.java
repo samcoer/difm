@@ -2,12 +2,14 @@ package info.difm.db.bo;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "order")
+@Table(name = "tasks")
 public class Order {
 	private Long id;
 	private Address from;
@@ -20,6 +22,7 @@ public class Order {
 	private int deliveryUrgency;
 	private int noItems;
 	private String orderDescription;
+	
 
 	@Id
 	@GeneratedValue
@@ -32,6 +35,7 @@ public class Order {
 		this.id = id;
 	}
 
+	@OneToOne (fetch = FetchType.EAGER)
 	public Address getFrom() {
 		return from;
 	}
@@ -40,6 +44,7 @@ public class Order {
 		this.from = from;
 	}
 
+	@OneToOne (fetch = FetchType.EAGER)	
 	public Address getTo() {
 		return to;
 	}
