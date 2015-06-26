@@ -14,6 +14,23 @@
     <string name="action_settings">Settings</string>
     <string name="app_id">1447956882173201</string>
 
-<!-- TODO: Remove or change this placeholder text -->
+    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="select_new_task_dialog_heading">Choose a appropriate task type...</string>
+    <string name="parcel">Bring a parcel</string>
+    <string name="buy_grocery">Buy Grocery</string>
+    <string name="paperwork">Paper Work</string>
+    <string name="action_previous">Back</string>
+    <string name="action_next">Next</string>
+    <string name="action_finish">Finish</string>
+    <string name="to_addr_lbl">Deliver To Address</string>
+    <string name="to_phone_lbl">Your Phone Number</string>
+    <string name="from_addr_lbl">Pick up from Address</string>
+    <string name="from_phone_lbl">Pick up from Phone Number</string>
+    <string name="lbl_approx_weight">Approximate Weight (in kgs)</string>
+    <string name="lbl_approx_distance">Approximate Distance from your place (in kms)</string>
+    <string name="lbl_urgency">Required within days</string>
+    <string name="lbl_for_count">Number of Items</string>
+    <string name="lbl_for_other_details">Other Required Details</string>
 </resources>

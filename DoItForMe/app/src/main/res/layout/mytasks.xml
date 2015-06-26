@@ -11,4 +11,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <ImageView
+            android:src="@drawable/plus"
+            android:id="@+id/addTaskBtn"
+            android:clickable="true"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true" />
+
+    </RelativeLayout>
+
 </RelativeLayout>

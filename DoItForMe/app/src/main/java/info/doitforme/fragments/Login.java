@@ -1,7 +1,7 @@
 package info.doitforme.fragments;
 
-import android.app.Fragment;
-import android.app.FragmentTransaction;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -20,7 +20,6 @@ import com.facebook.login.widget.LoginButton;
 
 import info.doitforme.R;
 import info.doitforme.integration.ServiceFactory;
-import info.doitforme.integration.bo.User;
 import info.doitforme.integration.service.UserService;
 import retrofit.Callback;
 import retrofit.RetrofitError;
@@ -65,28 +64,28 @@ public class Login extends Fragment {
                 }
 
                 ((UserService) ServiceFactory.getService(UserService.class)).login(txtUserName.getText().toString(),
-                    txtPassword.getText().toString(), new Callback<Boolean>() {
-                        @Override
-                        public void success(Boolean result, Response response) {
-                            if(result) {
-                                Log.d("TEST", "Successfully logged in");
-                                //Go to add task screen
-                                Fragment newTaskFragment = new NewTask();
-                                FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                                transaction.replace(R.id.container, newTaskFragment);
-                                transaction.addToBackStack(null);
-                                transaction.commit();
-                            }else{
-                                Log.d("TEST", "Username and/or password is not correct");
-                                Toast.makeText(getActivity(), "Username and/or password is not correct", Toast.LENGTH_LONG).show();
+                        txtPassword.getText().toString(), new Callback<Boolean>() {
+                            @Override
+                            public void success(Boolean result, Response response) {
+                                if (result) {
+                                    Log.d("TEST", "Successfully logged in");
+                                    //Go to add task screen
+                                    Fragment myTasksFragment = new MyTasks();
+                                    FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                                    transaction.replace(R.id.container, myTasksFragment);
+                                    transaction.addToBackStack(null);
+                                    transaction.commit();
+                                } else {
+                                    Log.d("TEST", "Username and/or password is not correct");
+                                    Toast.makeText(getActivity(), "Username and/or password is not correct", Toast.LENGTH_LONG).show();
+                                }
+                            }
+
+                            @Override
+                            public void failure(RetrofitError error) {
+                                Log.d("TEST", error.getMessage());
                             }
                         }
-
-                        @Override
-                        public void failure(RetrofitError error) {
-                            Log.d("TEST", error.getMessage());
-                        }
-                    }
                 );
             }
         });
