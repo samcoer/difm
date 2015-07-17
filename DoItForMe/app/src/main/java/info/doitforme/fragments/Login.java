@@ -1,8 +1,9 @@
 package info.doitforme.fragments;
 
+import android.app.Activity;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +19,7 @@ import com.facebook.FacebookException;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 
+import info.doitforme.MainActivity;
 import info.doitforme.R;
 import info.doitforme.integration.ServiceFactory;
 import info.doitforme.integration.service.UserService;
@@ -34,6 +36,7 @@ public class Login extends Fragment {
     private LoginButton btnLoginFB;
     private ImageButton btnLoginGP;
     private CallbackManager callbackManager;
+    private MainActivity mActivity;
 
     public Login() {
 
@@ -44,6 +47,12 @@ public class Login extends Fragment {
         View rootView = inflater.inflate(R.layout.login, container, false);
         createButtons(rootView);
         return rootView;
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        mActivity = (MainActivity)activity;
     }
 
     private void createButtons(final View rootView) {
@@ -70,11 +79,12 @@ public class Login extends Fragment {
                                 if (result) {
                                     Log.d("TEST", "Successfully logged in");
                                     //Go to add task screen
-                                    Fragment myTasksFragment = new MyTasks();
+                                    /*Fragment myTasksFragment = new MyTasks();
                                     FragmentTransaction transaction = getFragmentManager().beginTransaction();
                                     transaction.replace(R.id.container, myTasksFragment);
                                     transaction.addToBackStack(null);
-                                    transaction.commit();
+                                    transaction.commit();*/
+                                    mActivity.changeToFragment(new MyTasks());
                                 } else {
                                     Log.d("TEST", "Username and/or password is not correct");
                                     Toast.makeText(getActivity(), "Username and/or password is not correct", Toast.LENGTH_LONG).show();

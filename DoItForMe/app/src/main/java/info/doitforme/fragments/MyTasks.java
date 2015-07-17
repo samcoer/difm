@@ -1,9 +1,9 @@
 package info.doitforme.fragments;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 
+import info.doitforme.MainActivity;
 import info.doitforme.R;
 
 /**
@@ -23,6 +24,8 @@ public class MyTasks extends Fragment {
     public static String TAG = MyTasks.class.getName();
 
     private String[] options;
+
+    private MainActivity mActivity;
 
     private void initOptions() {
         options = new String[] {
@@ -42,6 +45,11 @@ public class MyTasks extends Fragment {
         return rootView;
     }
 
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        mActivity = (MainActivity)activity;
+    }
 
     private void showOptionsDialog() {
         initOptions();
@@ -60,10 +68,11 @@ public class MyTasks extends Fragment {
                 String itemValue = (String)listView.getItemAtPosition(position);
                 dialog.dismiss();
                 Fragment newTaskFragment = optionClicked(position);
-                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                mActivity.changeToFragment(newTaskFragment);
+                /*FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.replace(R.id.container, newTaskFragment);
                 transaction.addToBackStack(null);
-                transaction.commit();
+                transaction.commit();*/
                 Log.d(TAG, "option " + itemValue + " clicked.");
             }
         });

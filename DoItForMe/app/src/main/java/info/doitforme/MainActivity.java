@@ -33,14 +33,17 @@ public class MainActivity extends ActionBarActivity
      */
     private CharSequence mTitle;
 
+    private FragmentManager mFragmentManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         FacebookSdk.sdkInitialize(getApplicationContext());
 
+        mFragmentManager = getSupportFragmentManager();
         mNavigationDrawerFragment = (NavigationDrawerFragment)
-                getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
+                mFragmentManager.findFragmentById(R.id.navigation_drawer);
         mTitle = getTitle();
 
         // Set up the drawer.
@@ -52,7 +55,6 @@ public class MainActivity extends ActionBarActivity
     @Override
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
-        FragmentManager fragmentManager = getSupportFragmentManager();
         Fragment fragment = null;
         switch ( position ) {
             case 0:
@@ -70,11 +72,19 @@ public class MainActivity extends ActionBarActivity
         }
 
         if ( fragment != null ) {
-            fragmentManager.beginTransaction()
+            getSupportFragmentManager().beginTransaction()
                     .replace(R.id.container, fragment)
                     .commit();
         }
     }
+
+
+    public void changeToFragment(Fragment fragment) {
+        mFragmentManager.beginTransaction()
+                .replace(R.id.container, fragment)
+                .commit();
+    }
+
 
     public void onSectionAttached(int number) {
         switch (number) {

@@ -9,18 +9,18 @@
         <dex dex="/Users/ptanwar/app/difm/DoItForMe/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-49946d90678f9015f22e44305235ca944d372954.jar" />
     </item>
     <item
-        jar="/Users/ptanwar/app/difm/DoItForMe/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
-        <dex dex="/Users/ptanwar/app/difm/DoItForMe/app/build/intermediates/pre-dexed/debug/classes-07b58550ecda1fc27fa342e52466c0a76067d1ca.jar" />
-    </item>
-    <item
         jar="/Users/ptanwar/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.3.1/ecb6e1f8e4b0e84c4b886c2f14a1500caf309757/gson-2.3.1.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
         <dex dex="/Users/ptanwar/app/difm/DoItForMe/app/build/intermediates/pre-dexed/debug/gson-2.3.1-da0b9636dc4d335399a1417d018295f48be42e5b.jar" />
+    </item>
+    <item
+        jar="/Users/ptanwar/app/difm/DoItForMe/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="/Users/ptanwar/app/difm/DoItForMe/app/build/intermediates/pre-dexed/debug/classes-07b58550ecda1fc27fa342e52466c0a76067d1ca.jar" />
     </item>
     <item
         jar="/Users/ptanwar/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit/retrofit/1.9.0/a681c044244d9fc375198588297a39ba78028423/retrofit-1.9.0.jar"
